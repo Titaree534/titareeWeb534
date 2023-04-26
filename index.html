@@ -1,0 +1,272 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🙋‍♀️🙋‍♀️My Leaflet Website❤️❤️</title>
+
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+ integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+ crossorigin="" />
+ 
+ <!-- W3 CSS template -->
+ <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+ 
+ <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+ integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+ crossorigin=""></script>
+ <style>
+ #mapid {
+ height: 800px;
+ }
+ </style>
+
+
+
+
+</head>
+<body>
+    <div class="w3-row">
+        <div id="mapid" class="w3-half"></div>
+        <div id="content" class="w3-half">
+        <table class="w3-table w3-striped">
+        <tr>
+        <th>ชื่อแหล่งท่องเที่ยว</th>
+        <th>ประเภท</th>
+        <th>ระดับ</th>
+        </tr>
+        <tr>
+        <td>น้ำตก A</td>
+        <td>ธรรมชาติ</td>
+        <td>A</td>
+        </tr>
+        </table>
+        </div>
+      </div>
+
+<script>
+            var map = L.map("mapid").setView([13.743701837510997, 100.48892000000234],9);
+ 
+ var osm = L.tileLayer(
+ "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+ ).addTo(map);
+ var gsat = L.tileLayer(
+ "https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}"
+ ).addTo(map);
+ 
+ var baseMaps = {
+ OSM: osm,
+ GoogleSat: gsat,
+ };
+
+ // add data
+
+ var tourpoint = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ตลาดน้ำอัมพวา",
+        "type": "Natural",
+        "level": "⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐"
+      },
+      "geometry": {
+        "coordinates": [
+          99.95508454361487,
+          13.42557362981728
+        ],
+        "type": "Point"
+      },
+      "id": 0
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "หาดพัทยา",
+        "type": "Natural",
+        "level": "⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐"
+      },
+      "geometry": {
+        "coordinates": [
+          100.88037999999699,
+          12.933231365520982
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "สวนสนุกดรีมเวิลด์",
+        "type": "Special",
+        "level": "⭐⭐⭐⭐⭐⭐⭐"
+      },
+      "geometry": {
+        "coordinates": [
+          100.67487099999897,
+          13.987539650174384
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "เอเชียทีค",
+        "type": "Special",
+        "level": "⭐⭐⭐⭐⭐⭐⭐⭐"
+      },
+      "geometry": {
+        "coordinates": [
+          100.50414500000011,
+          13.70500199214689
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "วัดอรุณ",
+        "type": "Culture",
+        "level": "⭐⭐⭐⭐⭐⭐⭐⭐⭐"
+      },
+      "geometry": {
+        "coordinates": [
+          100.48892000000234,
+          13.743701837510997
+        ],
+        "type": "Point"
+      },
+      "id": 4
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "พระปฐมเจดีย์",
+        "type": "Culture",
+        "level": "⭐⭐⭐⭐⭐⭐"
+      },
+      "geometry": {
+        "coordinates": [
+          100.06004050000098,
+          13.819843416538788
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ตลาดน้ำวัดลำพญา",
+        "type": "Culture",
+        "level": "⭐⭐⭐⭐⭐⭐⭐⭐⭐"
+      },
+      "geometry": {
+        "coordinates": [
+          100.20337799999908,
+          13.958864917787707
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "บึงฉวาก",
+        "type": "Natural",
+        "level": "⭐⭐⭐⭐⭐⭐"
+      },
+      "geometry": {
+        "coordinates": [
+          100.06000000000034,
+          14.901116926581963
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "สะพานข้ามแม่น้ำแคว",
+        "type": "Culture",
+        "level": "⭐⭐⭐⭐⭐"
+      },
+      "geometry": {
+        "coordinates": [
+          99.50336099999765,
+          14.040857168534004
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "วัดถ้ำเสือ",
+        "type": "Culture",
+        "level": "⭐⭐⭐⭐⭐"
+      },
+      "geometry": {
+        "coordinates": [
+          99.72065499999945,
+          12.849947368305678
+        ],
+        "type": "Point"
+      }
+    }
+  ]
+}
+
+//interaction by mouseover
+
+var tourLayer = L.geoJSON(tourpoint, {
+ pointToLayer: function (feature, latlng) {
+ return L.marker(latlng).bindPopup(feature.properties.name);
+ },
+ onEachFeature: function (feature, layer) {
+ layer.on("mouseover", function () {
+ document
+ .getElementById(feature.properties.name)
+ .classList.add("w3-red");
+ });
+ 
+ layer.on("mouseout", function () {
+ document
+ .getElementById(feature.properties.name)
+ .classList.remove("w3-red");
+ });
+ },
+ }).addTo(map);
+ 
+ var cont = "";
+ cont += "<table class='w3-table w3-striped'>";
+ cont += "<tr>";
+ cont += "<th>ชื่อแหล่งท่องเที่ยว🏯</th>";
+ cont += "<th>ประเภท⚙️</th>";
+ cont += "<th>ระดับ🎚️</th>";
+ cont += "</tr>";
+ for (let i in tourpoint.features) {
+ cont += "<tr id=" + tourpoint.features[i].properties.name + ">";
+ cont += "<td>" + tourpoint.features[i].properties.name + "</td>";
+ cont += "<td>" + tourpoint.features[i].properties.type + "</td>";
+ cont += "<td>" + tourpoint.features[i].properties.level + "</td>";
+ cont += "</tr>";
+ }
+ cont += "</table>";
+ console.log(cont);
+ document.getElementById("content").innerHTML = cont;
+
+
+
+ var overlays = {สถานที่ท่องเที่ยว: tourLayer};
+ //add leyer control
+ L.control.layers(baseMaps, overlays).addTo(map);
+            
+
+        </script>
+    
+</body>
+</html>
